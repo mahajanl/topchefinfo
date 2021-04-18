@@ -1,0 +1,21 @@
+contentColumnType: string
+fieldGroup: 4c8f489b-a3c0-464f-9c3b-0d1e2c672ed4 # Common
+handle: location
+instructions: ''
+name: Location
+searchable: true
+settings:
+  allowSelfRelations: false
+  limit: ''
+  localizeRelations: false
+  selectionLabel: ''
+  showSiteMenu: true
+  source: null
+  sources:
+    - 'section:61442c00-4da9-45a5-b0de-91121ec33562' # Locations
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

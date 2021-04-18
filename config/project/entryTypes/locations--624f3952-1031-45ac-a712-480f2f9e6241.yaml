@@ -1,0 +1,65 @@
+fieldLayouts:
+  ce6608ea-cbd1-4a89-a986-5e68004bbdf1:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: a22f95a3-9e40-4bb8-96be-9a84c022c32c # Address
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c3ad0792-2e01-436b-8ff3-96cc66fda45d # City
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 262ae653-edaf-4df8-b281-20aed195d580 # State
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+        name: Content
+        sortOrder: 1
+handle: locations
+hasTitleField: false
+name: Locations
+section: 61442c00-4da9-45a5-b0de-91121ec33562 # Locations
+sortOrder: 1
+titleFormat: '{{ address }} {{ city.one }}, {{ state.one }}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

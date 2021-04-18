@@ -1,0 +1,21 @@
+contentColumnType: string
+fieldGroup: 4c8f489b-a3c0-464f-9c3b-0d1e2c672ed4 # Common
+handle: season
+instructions: ''
+name: Season
+searchable: false
+settings:
+  allowSelfRelations: false
+  limit: ''
+  localizeRelations: false
+  selectionLabel: ''
+  showSiteMenu: false
+  source: null
+  sources:
+    - 'section:94735578-ad5f-4e52-9db3-a44d2e63918d' # Seasons
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

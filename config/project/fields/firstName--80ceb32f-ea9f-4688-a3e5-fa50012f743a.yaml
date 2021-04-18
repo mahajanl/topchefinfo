@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: 4c8f489b-a3c0-464f-9c3b-0d1e2c672ed4 # Common
+handle: firstName
+instructions: ''
+name: 'First Name'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

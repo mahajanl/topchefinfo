@@ -1,0 +1,11 @@
+enableVersioning: true
+handle: seasons
+name: Seasons
+propagationMethod: all
+siteSettings:
+  82794e98-2fde-4a12-b668-d7f399670c48: # Top Chef Info
+    enabledByDefault: true
+    hasUrls: true
+    template: seasons/_entry
+    uriFormat: 'seasons/{slug}'
+type: channel

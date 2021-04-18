@@ -1,0 +1,21 @@
+contentColumnType: string
+fieldGroup: 4c8f489b-a3c0-464f-9c3b-0d1e2c672ed4 # Common
+handle: state
+instructions: ''
+name: State
+searchable: false
+settings:
+  allowSelfRelations: false
+  limit: '1'
+  localizeRelations: false
+  selectionLabel: ''
+  showSiteMenu: false
+  source: null
+  sources:
+    - 'section:9dc3646d-a59e-4ee5-ba54-d6f080aee8f2' # States
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

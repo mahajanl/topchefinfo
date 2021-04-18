@@ -1,0 +1,11 @@
+enableVersioning: true
+handle: cities
+name: Cities
+propagationMethod: all
+siteSettings:
+  82794e98-2fde-4a12-b668-d7f399670c48: # Top Chef Info
+    enabledByDefault: true
+    hasUrls: true
+    template: cities/_entry
+    uriFormat: 'cities/{slug}'
+type: channel

@@ -1,0 +1,11 @@
+enableVersioning: true
+handle: chefs
+name: Chefs
+propagationMethod: all
+siteSettings:
+  82794e98-2fde-4a12-b668-d7f399670c48: # Top Chef Info
+    enabledByDefault: true
+    hasUrls: true
+    template: chefs/_entry
+    uriFormat: 'chefs/{slug}'
+type: channel
