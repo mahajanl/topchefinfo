@@ -8,4 +8,7 @@ siteSettings:
     hasUrls: true
     template: chefs/_entry
     uriFormat: 'chefs/{slug}'
-type: channel
+structure:
+  maxLevels: null
+  uid: 4c9c6041-cc07-40aa-acd0-74b7b3f817d4
+type: structure

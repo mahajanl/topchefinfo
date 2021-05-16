@@ -6,19 +6,23 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote {
 }
 
 h1 {
-  // @apply
-  //   font-black
-  //   text-2xl;
+  @apply
+    font-bold
+    text-6xl
+    mb-8;
 }
 
 h2 {
-  // @apply
-  //   font-bold
-  //   text-xl;
+  @apply
+  font-bold
+  text-4xl
+  text-pink-600;
 }
 
 h3 {
-  // @apply text-lg;
+  @apply 
+    text-2xl
+    font-bold;
 }
 
 h4 {
@@ -46,6 +50,12 @@ a {
   }
 }
 
+p {
+  @apply
+    text-lg
+    mb-4;
+}
+
 
 @tailwind components;
 
@@ -54,6 +64,7 @@ a {
 // @import 'your/stuff';
 // @import 'your/things';
 
+@import 'base';
 @import 'button';
 
 /*! purgecss end ignore */

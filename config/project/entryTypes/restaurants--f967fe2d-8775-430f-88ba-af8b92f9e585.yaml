@@ -34,7 +34,7 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
-            width: 50
+            width: 25
           -
             fieldUid: 4a0a33a7-6a73-430c-885c-d02145901ff9 # Location
             instructions: null
@@ -45,6 +45,24 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            fieldUid: a5ae39cc-ead6-44bc-b199-cec49df56ff7 # Visited
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: c492879c-f7e0-4978-93c4-72dc07b8f8b2 # Now Closed
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
             fieldUid: 0a9728e5-9811-4ed3-b79f-95c47114b163 # Websites
             instructions: null
             label: null
@@ -52,7 +70,7 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
-            width: 100
+            width: 75
         name: Content
         sortOrder: 1
 handle: restaurants

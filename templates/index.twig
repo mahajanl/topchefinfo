@@ -2,7 +2,91 @@
 
 {% block content %}
 
-<h1>Hello</h1>
-<p>Content</p>
+{% set intro = "A loving sideproject dedicated to the Top Chef contestants and judges, making it easier to find and support their restaurants and culinary endeavors." %}
+
+
+{% include '_partials/intro' with { intro: intro } %}
+
+<div class="page container">
+    <div class="blocks">
+        <div>
+            <a href="/chefs">Chefs</a>
+        </div>
+
+        <div>
+            <a href="#">
+                <p class="text-2xl mb-0">Restaurants</p>
+                {# <p class="block">See listings of all the restaurants in our database, or search for a restaurant by a spacific chef.</p> #}
+            </a>
+        </div>
+
+        <div>
+            <a href="#">Judges</a>
+        </div>
+
+        <div>
+            <a href="#">Seasons</a>
+        </div>
+    </div>
+</div>
+
+<section class="container mt-24  px-8 md:px-0">
+    <h2 class="text-pink-600 mb-12 text-center">Popular Chefs</h2>
+    <div class="">
+        <div class="grid grid-cols-2 gap-4 md:grid-cols-4 md:px-16">
+            {% set favorites = craft.entries.section(['chefs', 'judges']).favorite(true) %}
+            {% for favorite in favorites %}
+                <div>
+                    <h3 class="mb-2">{{ favorite.title }}</h3>
+                    <p class="mb-4 underline"><a class="" href="{{ favorite.url}}">See {{ favorite.title }}'s page</a></p>
+                    {% set restaurants = craft.entries.section('restaurants').relatedTo(favorite) %}
+                    <ul>
+                        {% for restaurant in restaurants %}
+                            <li>
+                                <a href="{{ restaurant.url }}">
+                                    <i class="fas fa-utensils pr-4"></i>
+                                    {{ restaurant.title }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{# 
+<section class="container mt-16 px-8 md:px-0">
+    <h2 class="text-pink-600 mb-4 text-center">Restaurants I've Visited</h2>
+    <h3 class="mb-16">I haven't been to many, but I'm going to make it a priority in the new year.</h3>
+    <div class="">
+        <div class="grid grid-cols-2 gap-4 md:grid-cols-4 md:px-16">
+            {% set recentEntries = craft.entries.section('restaurants').visited(true) %}
+            {% for recent in recentEntries %}
+                <div>
+                    <h3 class="mb-2">{{ recent.title }} {% if recent.nowClosed == true %}<i class="far fa-frown text-red-500"></i><span class="text-red-300"> CLOSED</span><i class="far fa-frown text-red-500"></i>{% endif %}</h3>
+                    <p class="mb-4 underline"><a class="" href="{{ recent.url}}">See {{ recent.title }}'s page</a></p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section> #}
+
+<section class="container mt-24 px-8 md:px-0">
+    <h2 class="text-pink-600 mb-12 text-center">Recent Additions</h2>
+    <div class="">
+        <div class="grid grid-cols-2 gap-4 md:grid-cols-4 md:px-16">
+            {% set recentEntries = craft.entries.section(['chefs', 'judges', 'restaurants']).limit(4) %}
+            {% for recent in recentEntries %}
+                <div>
+                    <h3 class="mb-2">{{ recent.title }}</h3>
+                    <p class="mb-4 underline"><a class="" href="{{ recent.url}}">See {{ recent.title }}'s page</a></p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
 
 {% endblock %}

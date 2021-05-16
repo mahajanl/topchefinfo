@@ -1,0 +1,47 @@
+{% extends '_layout' %}
+
+{% block content %}
+
+{% set intro = "The Chefs that have been on Top Chef... as I get around to adding them. You can also look for Chefs by season." %}
+
+{% include '_partials/intro' with { intro: intro, classes: 'text-2xl font-normal text-pink-500' } %}
+
+{% set hoverClass = "pl-4 -ml-4 border border-transparent border-t-0 border-r-0 border-b-0  duration-300 hover:border-l-2 hover:border-pink-100 hover:text-pink-100" %}
+
+<section class="container mt-24  px-8 md:px-0">
+    <div class="grid grid-cols-2 gap-8 md:grid-cols-3 md:px-16">
+        {% set chefs = craft.entries.section('chefs')  %}
+        {% for chef in chefs %}
+            <div class="grid grid-cols-4 my-4">
+                <a class="col-span-2" href="{{ chef.url }}">
+                    <h3 class="mb-4 text-3xl text-pink-500 {{ hoverClass }}">{{ chef.title }}</h3>
+                </a>
+                <div class="col-span-2">
+                    <p class="px-3 py-1">Season(s): 
+                        {% for season in chef.season %}
+                            {{ season }}{% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                    </p>
+                </div>
+                {% set restaurants = craft.entries.section('restaurants').relatedTo(chef) %}
+                <ul class="col-span-4">
+                    {% if restaurants|length %}<li class="font-bold text-xl pb-4">Restaurants</li>{% endif %}
+                    {% for restaurant in restaurants %}
+                        <li class="pb-3">
+                            <a class="text-xl  {{ hoverClass }}" href="{{ restaurant.url }}">
+                                <i class="fas fa-utensils pr-4"></i>
+                                {{ restaurant.title }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+
+
+
+
+{% endblock %}

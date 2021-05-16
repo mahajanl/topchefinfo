@@ -1,14 +1,28 @@
-dateModified: 1618770107
+dateModified: 1621200316
 email:
   fromEmail: lakshamima@gmail.com
   fromName: 'Top Chef Info'
   transportType: craft\mail\transportadapters\Sendmail
+plugins:
+  assetrev:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+  templatecomments:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
 system:
   edition: solo
   live: true
-  name: 'Top Chef Info'
+  name: 'Top Chef Sh*t'
+  retryDuration: null
   schemaVersion: 3.6.8
-  timeZone: America/Los_Angeles
+  timeZone: America/Cayman
 users:
   allowPublicRegistration: false
   defaultGroup: null
