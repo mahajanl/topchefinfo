@@ -1,0 +1,9 @@
+    {% set chefs = craft.entries.section('chefs')  %}
+
+    <section class="container mt-24  px-8 md:px-0">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-4 md:px-16">
+            {% for chef in chefs %}
+                {% include 'chefs/_chef' with { chef: chef } %}
+            {% endfor %}
+        </div>
+    </section>

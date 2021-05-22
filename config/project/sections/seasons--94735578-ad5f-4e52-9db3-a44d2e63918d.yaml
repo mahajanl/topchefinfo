@@ -8,4 +8,7 @@ siteSettings:
     hasUrls: true
     template: seasons/_entry
     uriFormat: 'seasons/{slug}'
-type: channel
+structure:
+  maxLevels: null
+  uid: 05093c8b-5938-462b-9386-7786109cc0e9
+type: structure

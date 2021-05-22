@@ -1,0 +1,23 @@
+{% extends '_layout' %}
+
+{% block content %}
+<div class="container px-8 md:px-0">
+    <h1>Season {{ entry.title }} Chefs</h1>
+
+    {% set seasons = craft.entries.section('seasons').id(['not ' ~ entry.id]) %}
+    <div class="container mx-auto"> 
+        <h3 class="pb-8">Other Seasons</h3>
+        <a class="px-8 py-3 mr-4 border border-blue-500 duration-300 hover:border-white text-lg font-bold" href="/chefs/all-chefs">Back to All Chefs</a>
+        {% for season in seasons %}
+            <a class="px-8 py-3 mr-4 border border-blue-500 duration-300 hover:border-white text-lg font-bold" href="{{ season.url }}">{{ season.title }}</a>
+        {% endfor %}
+    </div>
+
+    {% set chefsOnSeason = craft.entries.section('chefs').relatedTo(entry) %}
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4  mt-24  px-8 md:px-0">
+        {% for chef in chefsOnSeason %}
+            {% include 'chefs/_chef' with { chef: chef } %}
+        {% endfor %}
+    </div>
+
+{% endblock %}

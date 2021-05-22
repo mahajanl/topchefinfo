@@ -1,14 +1,14 @@
 body {
     @apply 
         bg-black
-        text-indigo-200;
+        text-blue-200;
 }
 
 header {
     @apply
         p-8
         bg-black
-        text-indigo-200
+        text-blue-200
         pt-12
         pb-4;
 }
@@ -38,8 +38,8 @@ header {
             transition
             duration-300
             border
-            border-indigo-900
-            hover:border-indigo-400
+            border-blue-900
+            hover:border-blue-400
             flex
             items-center
             justify-center

@@ -1,0 +1,24 @@
+<div class="grid grid-cols-4 my-4">
+    <a class="col-span-4" href="{{ chef.url }}">
+        <h3 class="mb-4 text-3xl text-pink-500 "><span class="{{ hoverClass }}">{{ chef.title }}</span></h3>
+        <p class="py-1">Season(s): 
+            {% for season in chef.season %}
+                {{ season }}{% if not loop.last %}, {% endif %}
+            {% endfor %}
+        </p>
+    </a>
+    {% set restaurants = craft.entries.section('restaurants').relatedTo(chef) %}
+    {% if restaurants|length %}
+        <ul class="col-span-4">
+            <li class="font-bold text-xl pb-4">Restaurants</li>
+            {% for restaurant in restaurants %}
+                <li class="pb-3">
+                    <a class="text-xl  {{ hoverClass }}" href="{{ restaurant.url }}">
+                        <i class="fas fa-utensils pr-4"></i>
+                        {{ restaurant.title }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</div>

@@ -1,10 +1,22 @@
 <header>
     <div class="container">
         <div class="md:grid md:grid-cols-2">
-            <h1>{{ systemName }}</h1>
+            {% if craft.app.request.segments|length == 0 %} 
+                <h1>
+            {% else %}
+                <span class="text-2xl font-bold">
+            {% endif %}
+
+                {{ systemName }}
+            {% if craft.app.request.segments|length == 0 %} 
+                </h1>
+            {% else %}
+                </span>
+            {% endif %}
+
             <form class="flex justify-end">
                 <input 
-                    class="bg-black border border-indigo-200 h-12 w-100 rounded px-4 py-4"
+                    class="bg-black border border-blue-200 h-12 w-100 rounded px-4 py-4"
                     type="text" 
                     name="global" 
                     placeholder="Search by name, city, state...">
