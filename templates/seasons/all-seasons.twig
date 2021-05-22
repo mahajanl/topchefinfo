@@ -1,0 +1,40 @@
+{% extends '_layout' %}
+
+{% block content %}
+    {% set seasons = craft.entries.section('seasons') %}
+    <div class="fixed bg-blue-200 text-black w-28 px-3 py-2 border-r-2 border-b-2 border-pink-500"> 
+        <p class="text-xl font-bold pb-2 border-b border-blue-800">Scroll to Season</p>
+        <ul>
+        {% for season in seasons %}
+            <li class="py-4">
+                <a class="px-8 py-3 duration-300 hover:bg-indigo-800 hover:text-blue-200 text-lg font-bold" href="#{{ season.title|kebab }}">{{ season.title }}</a>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+    <div class="container mx-auto">
+        <h1>All Top Chefs</h1>
+    </div>
+    {% set intro = "The Chefs by season." %}
+
+    {% include '_partials/intro' with { intro: intro, classes: 'text-2xl font-normal text-pink-500' } %}
+    
+
+    <div class="container mt-24">
+        {% for season in seasons %}
+            <h3 id="{{ season.title|kebab }}" class="pt-20 pb-6 text-4xl text-center"><span class="underline">Season {{ season.title }}</span></h3>
+                {% set chefsOnSeason = craft.entries.section('chefs').relatedTo(season) %}
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {% for chef in chefsOnSeason %}
+                    {% include 'chefs/_chef' with { chef: chef } %}
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+
+
+
+
+
+
+{% endblock %}
